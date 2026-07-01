@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♡ under maintenance</title>
+    
+    <!-- Importing your fonts and your exact style.css to keep the theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Specific layout for the maintenance message */
+        .maintenance-wrapper {
+            text-align: center;
+            max-width: 600px;
+            margin: 6rem auto 4rem auto;
+            padding: 0 1rem;
+        }
+        
+        .maintenance-wrapper h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: var(--accent-rose); /* Tied to style.css */
+        }
+        
+        .maintenance-wrapper p.status-note {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.85;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            color: var(--text-sepia); /* Tied to style.css */
+        }
+        
+        .telegram-btn {
+            display: inline-block;
+            background: var(--text-espresso); /* Tied to style.css */
+            color: var(--bg-cream);           /* Tied to style.css */
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-style: italic;
+            border-radius: 4px;
+            transition: opacity 0.2s;
+            box-shadow: 0 4px 15px rgba(107, 90, 80, 0.1);
+        }
+        
+        .telegram-btn:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <!-- Reusing your fade-up animations from style.css -->
+        <section class="maintenance-wrapper fade-up delay-1">
+            <h1>all night, thinking of you.</h1>
+            <p class="status-note">
+                we are currently doing a little bit of maintenance to bring you a much better shopping experience.
+            </p>
+            
+            <div class="fade-up delay-2">
+                <p style="margin-bottom: 1rem; color: var(--text-dark);">
+                    for ordering and inquiries, please message us directly:
+                </p>
+                <a href="https://t.me/allnightthinkingofu" target="_blank" rel="noopener" class="telegram-btn">
+                    contact @allnightthinkingofu ❤︎
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Keeping your original footer -->
+    <footer class="site-footer fade-up delay-2">
+        <p>allnightthinkingofyou@outlook.com  ❤︎⁠  located in yangon, myanmar</p>
+    </footer>
+</body>
+</html>
