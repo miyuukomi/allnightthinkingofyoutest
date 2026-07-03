@@ -44,7 +44,6 @@
             opacity: 0.6;
         }
 
-        /* The Card Container */
         .white-editorial-card {
             padding: 0.2rem;
             overflow: hidden;
@@ -52,7 +51,6 @@
             background: #ffffff;
         }
 
-        /* Default iframe for Desktop/Tablets */
         .doc-embed-frame {
             width: 100%;
             height: 800px; 
@@ -60,15 +58,14 @@
             display: block;
         }
 
-        /* The Magic Mobile Fix! */
         @media (max-width: 600px) {
             .white-editorial-card {
-                height: 600px; /* Constrain the height on phones */
+                height: 600px;
             }
             .doc-embed-frame {
-                width: 142% !important; /* Make it wider... */
-                height: 142% !important; /* ...and taller */
-                transform: scale(0.7); /* Then shrink the whole thing down to fit */
+                width: 142% !important; 
+                height: 142% !important; 
+                transform: scale(0.7); 
                 transform-origin: top left;
                 position: absolute;
                 top: 0;

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     
-    <!-- Restored global header + dynamic localized translators -->
+   
     <script src="/lang-switch.js"></script>
     <script src="/site-header.js"></script>
     <link rel="stylesheet" href="/style.css">
@@ -16,7 +16,7 @@
     <style>
 
         body {
-            padding-top: 3.5rem;
+            padding-top: 0rem;
             margin: 0;
             background-color: var(--bg-porcelain);
             color: var(--type-dusty-mauve);
@@ -24,7 +24,6 @@
             background-image: repeating-linear-gradient(90deg, transparent, transparent 14px, rgba(184, 115, 116, 0.04) 14px, rgba(184, 115, 116, 0.04) 15px);
         }
 
-        /* Snaps the bar to the top edge to eliminate the background pattern gap */
         #global-header {
             position: fixed;
             top: 0;
@@ -69,7 +68,6 @@
             position: relative;
         }
 
-        /* Double luxury interior accent rule */
         .tutorial-container::after {
             content: '';
             position: absolute;
@@ -173,7 +171,6 @@
 </head>
 <body>
 
-    <!-- Target mounting block for site-header.js -->
     <header id="global-header" class="site-header"></header>
     
     <main class="tutorial-wrapper fade-up delay-1">

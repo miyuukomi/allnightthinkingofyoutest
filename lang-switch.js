@@ -372,14 +372,14 @@ const translations = {
 
     /* ── tutorial/index.html ── */
     tutorial_title: {
-        en: "video tutorials ⸜(｡˃ ᵕ ˂ )⸝♡",
-        my: "ဗီဒီယို လမ်းညွှန်ချက်များ ⸜(｡˃ ᵕ ˂ )⸝♡",
-        zh: "视频教程指南 ⸜(｡˃ ᵕ ˂ )⸝♡"
+        en: "UNDER CONSTRUCTION ⸜(｡˃ ᵕ ˂ )⸝♡",
+        my: "UNDER CONSTRUCTION ⸜(｡˃ ᵕ ˂ )⸝♡",
+        zh: "UNDER CONSTRUCTION ⸜(｡˃ ᵕ ˂ )⸝♡"
     },
     tutorial_subtitle: {
-        en: "simple video guides to walk you through ordering, tracking,<br>and browsing your favorite storefronts step by step.",
-        my: "အော်ဒါတင်နည်း၊ ခြေရာခံနည်းနှင့် နှစ်သက်ရာ ဆိုင်လေးများကို<br>တစ်ဆင့်ချင်းစီ လိုက်လံကြည့်ရှုနိုင်မည့် ရိုးရှင်းသော ဗီဒီယိုလမ်းညွှန်ချက်များ ဖြစ်ပါသည်ရှင့်။",
-        zh: "为您提供简洁明了的视频指南，手把手带您熟悉下单、物流追踪，<br>并一步步轻松浏览您喜爱的海外店铺。"
+        en: "This page is currently unfinished. We will announce on our channel when the new videos are up, but for now, you can check out our previous tutorials on our TikTok: @allnightthinkingofyou.",
+        my: "ဒီစာမျက်နှာကတော့ ပြင်ဆင်လို့ အပြီးမသတ်ရသေးပါဘူးရှင့်။ ဗီဒီယိုအသစ်တွေတင်ပေးမယ့်အချိန်ကို ညီမတို့ရဲ့ Channel မှာ ပြန်လည်ကြေညာပေးသွားမှာ ဖြစ်ပါတယ်ရှင့်။ လောလောဆယ်မှာတော့ ညီမတို့ရဲ့ TikTok အကောင့်ဖြစ်တဲ့ @allnightthinkingofyou မှာ အရင်တင်ထားတဲ့ Tutorial အဟောင်းတွေကို ဝင်ရောက်ကြည့်ရှုနိုင်ပါတယ်နော်။",
+        zh: "这个页面还没完全完工 噢。等视频上线时，我们会在频道里第一时间通知大家哒！不过现在宝子也可以先去我们的 TikTok（@allnightthinkingofyou）看看以前的教程视频噢~。"
     },
     tutorial_1_title: {
         en: "how to place an order from japan",

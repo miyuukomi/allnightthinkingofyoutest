@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;1,400&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
@@ -259,34 +258,110 @@ h1, h2, h3, .editorial-title {
     visibility: visible;
     transform: translateY(0);
 }
+/* ==========================================================================
+   FINAL CLEANED MOBILE HEADER & OVERLAP FIX
+   ========================================================================== */
+  @media (max-width: 900px) {
+    /* Forces header containers into standard document flow so they push content down naturally */
+    .top-header-navigation,
+    #global-header {
+        position: sticky !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        z-index: 99999 !important;
+    }
 
-@media (max-width: 900px) {
+    /* Fixes the grid container stretching & restores breathing room on left/right edges */
     .header-inner {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.8rem;
-        padding: 1.2rem 1rem;
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-rows: auto auto !important;
+        gap: 0.75rem 0rem !important;
+        padding: 1rem 1.2rem !important; /* FIXED: Keeps elements away from raw screen edges */
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
 
+    /* Keeps brand text safe from clipping */
+    .sidebar-brand {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        align-self: center;
+        font-size: 1.05rem !important;
+        padding-left: 0 !important; 
+        white-space: nowrap;
+    }
+
+    /* Keeps language trigger safe from clipping */
+    .lang-bookmark-trigger {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+        padding-right: 0 !important; 
+    }
+
+    /* Full-width wrapping row for navigation links */
     .sidebar-links {
-        gap: 0.5rem 1rem;
-        max-width: 500px;
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        display: flex !important;
+        flex-wrap: wrap !important; /* FIXED: Allows links to wrap beautifully instead of breaking container width */
+        justify-content: center !important; /* Centers links beautifully on mobile layouts */
+        gap: 0.6rem 1.2rem !important;
+        width: 100% !important;
+        padding: 0.4rem 0 0.2rem 0 !important;
+        margin-left: 0 !important;
+        overflow-x: visible !important; /* Disables buggy horizontal tracks */
     }
 
+    /* Restores link text contrast and legibility */
     .side-nav-btn {
-        font-size: 0.85rem;
+        font-size: 0.88rem !important;
+        flex-shrink: 0 !important;
+        opacity: 0.85 !important; /* FIXED: Boosted visibility so they aren't ghosted/faded */
+        transform: scale(1) !important; /* Resets layout scale distortion */
+        transition: color 0.25s ease, opacity 0.25s ease;
     }
 
+    .side-nav-btn:hover,
+    .side-nav-btn.active,
+    .side-nav-btn.active-scroll {
+        opacity: 1 !important;
+        color: var(--accent-antique-rose) !important;
+    }
+
+    /* Mobile Dropdown Panel Fix */
     .lang-bookmark-content {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%) translateY(10px);
+        position: fixed !important;
+        top: auto !important;
+        bottom: 20px !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(120%) !important;
+        width: calc(100vw - 32px) !important;
+        max-width: 340px !important;
+        z-index: 1000000 !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease !important;
     }
-    
-    .lang-bookmark-trigger:hover .lang-bookmark-content {
-        transform: translateX(-50%) translateY(0);
+
+    .lang-bookmark-trigger.active-dropdown .lang-bookmark-content {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateX(-50%) translateY(0) !important;
     }
+}
+
+/* ─── INDEX SPECIFIC CORE OVERRIDES (FIXED SYNTAX) ─── */
+body {
+    background-color: var(--bg-porcelain);
+    overflow-x: hidden;
+    margin: 0;
 }
 
 /* ─── ASYMMETRICAL EDITORIAL DATA CARDS ─── */
@@ -1014,102 +1089,6 @@ html[lang="zh"], html[lang="zh"] * { font-family: 'ChineseLocal', sans-serif; fo
 .about-us-link:hover::after,
 .about-us-link.active-scroll::after {
     opacity: 1;
-}
-
-/* ==========================================================================
-   ULTRA-RESPONSIVE COMPACT HEADER GRID SYSTEM (MOBILE FIX)
-   ========================================================================== */
-@media (max-width: 900px) {
-    .top-header-navigation {
-        height: auto !important; /* Defends against height collapse bugs */
-    }
-
-    .header-inner {
-        display: grid !important;
-        grid-template-columns: 1fr auto !important;
-        grid-template-rows: auto auto !important;
-        gap: 0.5rem 0rem !important;
-        padding: 0.9rem 0rem 0rem 0rem !important; /* Spacing shifted into track for seamless fill */
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    /* Pinned Left Header Brand Group */
-    .sidebar-brand {
-        grid-column: 1;
-        grid-row: 1;
-        justify-self: start;
-        align-self: center;
-        font-size: 1.05rem;
-        padding-left: 1rem;
-    }
-
-    /* Pinned Right Isolated Language Trigger */
-    .lang-bookmark-trigger {
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: end;
-        align-self: center;
-        padding-right: 1rem;
-    }
-
-    /* Full-Width Swipe Selection Track */
-    .sidebar-links {
-        grid-column: 1 / span 2;
-        grid-row: 2;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        width: 100% !important; /* Fixed: Prevents breaking parent height calculations */
-        margin-left: 0 !important; /* Fixed: Removes horizontal layout shifts */
-        padding: 0.6rem 1rem 0.9rem 1rem !important; /* Forces header box to stretch completely */
-        gap: 1.6rem !important;
-        justify-content: flex-start !important;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .sidebar-links::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Custom Mobile Scale Invariants */
-    .side-nav-btn {
-        font-size: 0.9rem !important;
-        flex-shrink: 0 !important;
-        scroll-snap-align: center;
-        opacity: 0.4; 
-        transform: scale(0.92);
-        transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
-    }
-
-    /* Dynamic Highlight Class */
-    .side-nav-btn.active-scroll {
-        opacity: 1 !important;
-        transform: scale(1.06) !important;
-        color: var(--type-dusty-mauve) !important;
-    }
-
-    /* Mobile Drawer Panel Sheet Fix */
-    .lang-bookmark-content {
-        position: fixed !important;
-        top: auto !important;
-        bottom: 20px !important;
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) translateY(120%) !important;
-        width: calc(100vw - 32px) !important;
-        max-width: 340px !important;
-        z-index: 1000000 !important;
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease !important;
-    }
-
-    .lang-bookmark-trigger.active-dropdown .lang-bookmark-content {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateX(-50%) translateY(0) !important;
-    }
 }
 
 /* ─── INDEX SPECIFIC CORE OVERRIDES ─── */
